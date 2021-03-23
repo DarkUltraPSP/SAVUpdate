@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8" />
+        <title>Fiche SAV</title>
+        <link href="style.css" rel="stylesheet" type="text/css"  media="all"/>
+    </head>
+    <body>
+        <div class="page-container">
+
+            <div class="logo">
+                <img src="Update.png" class="logo">
+            </div>
+            
+            <form class="original-form">
+                <div class="left-side">
+                    <div class="date">
+                        <script>
+                            var today = new Date();
+                            var jj = String(today.getDate()).padStart(2, '0');
+                            var mm = String(today.getMonth() + 1).padStart(2, '0'); 
+                            var yyyy = today.getFullYear();
+
+                            today = jj + '/' + mm + '/' + yyyy;
+                            document.write("Date de réception: " + today);
+                        </script>
+                    </div>
+                    <div class="nom-societe">
+                        Nom de la société: 
+                        <input type="text" name="nomSociete">
+                    </div>
+                    <div class="nom">
+                        Nom: 
+                        <input type="text" name="nom" id="nom">
+                    </div>
+                    <div class="prenom">
+                        Prenom: 
+                        <input type="text" name="prenom" id="prenom">
+                    </div>
+                    <div class="mail">
+                        E-mail: 
+                        <input type="mail" name="mail" id="mail">
+                    </div>
+                    <div class="phone">
+                        Téléphone: 
+                        <input type="text" name="phone" id="phone">
+                    </div>
+                    <div class="garantie">
+                        Produit sous garantie 
+                        Oui <input type="radio" name="garantie">
+                        Non <input type="radio" name="garantie">
+                    </div>
+                    <div class="date-achat">
+                        Date d'achat client
+                        <input type="date" name="dateAchat" id="dateAchat">
+                    </div>
+                    <div class="prise-en-charge">
+                        Prise en charge express
+                        Oui <input type="radio" name="priseEnChargeExpress">
+                        Non <input type="radio" name="priseEnChargeExpress">
+                    </div>
+                </div>
+
+                <div class="right-side">
+                    <div class="materiel-concerne">
+                        Materiel Concerné: 
+                        <input type="text" name="materielConfirme" id="materielConfirme">
+                    </div>
+                    <div class="login">
+                        Identifiant: 
+                        <input type="text" name="login" id="login">
+                    </div>
+                    <div class="mdp">
+                        Mot de passe: 
+                        <input type="text" name="mdp" id="mdp">
+                    </div>
+                    <div class="accessoires">
+                        Accesoires Laissés
+                        Alimentation
+                        <input type="checkbox" name="accessoire">
+                        Sacoche
+                        <input type="checkbox" name="accessoire">
+                        Souris
+                        <input type="checkbox" name="accessoire">
+                        Clavier
+                        <input type="checkbox" name="accessoire">
+                        Ecran
+                        <input type="checkbox" name="accessoire">
+                        Cable
+                        <input type="checkbox" name="accessoire">
+                        Carton
+                        <input type="checkbox" name="accessoire">
+                        Autre
+                        <textarea name="accessoire"></textarea>
+                </div>
+
+                <div class="detail-panne">
+                    DETAILS DE LA PANNE :
+                    <textarea name="detailPanne"></textarea>
+                </div>
+
+                <div class="nature-panne">
+                    Nature de la panne
+                    <input type="radio" name="naturePanne"> Permanente
+                    <input type="radio" name="naturePanne"> Aléatoire
+                    <input type="radio" name="naturePanne"> Dans des conditions particulières
+                </div>
+
+                <div class="save-data">
+                    Sauvegarde des données
+                    <input type="radio" name="saveData"> Désire une sauvegarde, à renseigner: <input type="text" name="" id="">
+                    <input type="radio" name="saveData" class="machin"> Ne souhaite pas de sauvegarde
+                </div>
+                <div class="devis-rep">
+                    DEVIS DE REPARATION:
+                </div>
+                <div class="tarif">
+                    Tarif
+                </div>
+                <div class="accord-client">
+                    ACCORD DU CLIENT
+                    <input type="radio" name="accordClient"> Oui
+                    <input type="radio" name="accordClient"> Non
+                    CONTACTEZ LE
+                </div>
+            </form>
+            <form class="original-form">
+                <div class="left-side">
+                    <div class="date">
+                        <script>
+                            var today = new Date();
+                            var jj = String(today.getDate()).padStart(2, '0');
+                            var mm = String(today.getMonth() + 1).padStart(2, '0'); 
+                            var yyyy = today.getFullYear();
+
+                            today = jj + '/' + mm + '/' + yyyy;
+                            document.write("Date de réception: " + today);
+                        </script>
+                    </div>
+                    <div class="nom-societe">
+                        Nom de la société: 
+                        <input type="text" name="nomSociete">
+                    </div>
+                    <div class="nom">
+                        Nom: 
+                        <input type="text" name="nom" id="nom">
+                    </div>
+                    <div class="prenom">
+                        Prenom: 
+                        <input type="text" name="prenom" id="prenom">
+                    </div>
+                    <div class="mail">
+                        E-mail: 
+                        <input type="mail" name="mail" id="mail">
+                    </div>
+                    <div class="phone">
+                        Téléphone: 
+                        <input type="text" name="phone" id="phone">
+                    </div>
+                    <div class="garantie">
+                        Produit sous garantie 
+                        Oui <input type="radio" name="garantie">
+                        Non <input type="radio" name="garantie">
+                    </div>
+                    <div class="date-achat">
+                        Date d'achat client
+                        <input type="date" name="dateAchat" id="dateAchat">
+                    </div>
+                    <div class="prise-en-charge">
+                        Prise en charge express
+                        Oui <input type="radio" name="priseEnChargeExpress">
+                        Non <input type="radio" name="priseEnChargeExpress">
+                    </div>
+                </div>
+
+                <div class="right-side">
+
+                    <div class="materiel-concerne">
+                        Materiel Concerné: 
+                        <input type="text" name="materielConfirme" id="materielConfirme">
+                    </div>
+
+                    <div class="login">
+                        Identifiant: 
+                        <input type="text" name="login" id="login">
+                    </div>
+
+                    <div class="mdp">
+                        Mot de passe: 
+                        <input type="text" name="mdp" id="mdp">
+                    </div>
+
+                    <div class="accessoires">
+                        Accesoires Laissés
+                        Alimentation
+                        <input type="checkbox" name="accessoire">
+                        Sacoche
+                        <input type="checkbox" name="accessoire">
+                        Souris
+                        <input type="checkbox" name="accessoire">
+                        Clavier
+                        <input type="checkbox" name="accessoire">
+                        Ecran
+                        <input type="checkbox" name="accessoire">
+                        Cable
+                        <input type="checkbox" name="accessoire">
+                        Carton
+                        <input type="checkbox" name="accessoire">
+                        Autre
+                        <textarea name="accesoire"></textarea>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>
