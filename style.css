@@ -28,3 +28,20 @@ html {
 .logo {
     width: 10.5cm;
 }
+
+.original-form {
+    padding: 0.7cm;
+}
+
+.bloc-renseignement {
+    display: flex;
+    flex-direction: row;
+}
+
+.left-side {
+    width: 50%;
+}
+
+.right-side {
+    width: 50%;
+}
