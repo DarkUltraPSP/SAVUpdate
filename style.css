@@ -1,5 +1,5 @@
 @page {
-    size: 7in 9.25in;
+    size: 21cm 29.7cm;
     margin: 0;
 }
 
@@ -18,24 +18,45 @@ html {
     background-color: rgb(50, 50, 51);
 }
 
-
 .page-container {
     width: 210mm ;
     height: 297mm ;
     background-color: white ;
+    display: flex;
+    flex-direction: column;
 }
 
 .logo {
-    width: 10.5cm;
+    width: 8cm;
 }
 
 .original-form {
-    padding: 0.7cm;
+    padding: 0.2cm 0.7cm 0.2cm 0.7cm;
+}
+
+input[type=text], input[type=mail], input[type=date]   {
+    border: none;
+    border-bottom: dotted;
+    border-width: 1px;
 }
 
 .bloc-renseignement {
     display: flex;
     flex-direction: row;
+}
+
+.bold {
+    font-weight: bolder;
+}
+
+.left-side div {
+    display: flex;
+    margin: 0.025cm 0 0.025cm 0;
+}
+
+.right-side div {
+    display: flex;
+    margin: 0.025cm 0 0.025cm 0;
 }
 
 .left-side {
@@ -44,4 +65,135 @@ html {
 
 .right-side {
     width: 50%;
+}
+
+.garantie {
+    display: flex;
+    flex-direction: row;
+}
+
+.garantie div {
+    display: flex;
+    flex-direction: row;
+    padding-right: 1cm;
+    justify-content: space-evenly;
+    width: fit-content;
+}
+
+.prise-en-charge div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: fit-content;
+}
+
+.accessoires textarea{
+    max-height: 2.3cm;
+    max-width: 100%;
+    min-width: 100%;
+    width: 100%;
+    height: 2.5cm;
+}
+
+.accessoires {
+    flex-wrap: wrap;
+}
+
+.type-accesoires {
+    flex-wrap: wrap;
+}
+
+.type-accesoires div {
+    margin-right: 0.2cm;
+}
+
+.other input[type=text]{
+    width: 100%;
+    height: 0.5cm;
+}
+
+.bloc3 {
+    display: flex;
+    flex-direction: column;
+    padding: 0.2cm 0.7cm 0.2cm 0.7cm;
+    border-bottom: dotted;
+}
+
+.detail-panne {
+    display: flex;
+    flex-direction: column;
+}
+
+.detail-panne textarea{
+    max-height: 3cm;
+    max-width: 100%;
+    height: 2cm;
+    font-size: 15px;
+    width: 100%;
+}
+
+.nature-panne {
+    margin: 0.3cm 0 0.3cm 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.conditions {
+    display: flex;
+    width: 100%;
+}
+
+.conditions input[type=text] {
+    width: 100%;
+    max-width: 12cm;
+    height: 0.5cm;
+}
+
+.save-data {
+    display: flex;
+    flex-direction: column;
+}
+
+.want-save {
+    display: flex;
+    flex-direction: row;
+}
+
+.want-save [type=text]{
+    width: 100%;
+    max-width: 12cm;
+    height: 0.5cm;
+}
+
+.devis-rep {
+    margin: 0.25cm 0 1cm 0 ;
+}
+
+.copy-form {
+    display: flex;
+    flex-direction: column;
+    margin: 0 0.7cm 0 0.7cm;
+}
+
+.accord{
+    display: flex;
+    flex-direction: row;
+}
+
+.contact-client {
+    margin: 0 0 1cm 0 ;
+}
+
+.info-magasin {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.25cm;
+    font-size: 0.4cm;
+}
+
+.info-magasin span {
+    font-weight: bold;
+    color: rgb(9, 73, 146);
 }
