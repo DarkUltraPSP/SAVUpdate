@@ -423,7 +423,16 @@
             const autre2 = document.querySelector('#autre2');
             const autreTF2 = document.querySelector('#autreTF2');
 
-            document.querySelector('#detailPanne').addEventListener('change', () => document.querySelector('#detailPanne') !== "" ? document.querySelector('#detailPanne').style.border='none' : document.querySelector('#detailPanne').style.border='solid');
+            const detailPanne = document.querySelector('#detailPanne')
+            document.querySelector('#detailPanne').addEventListener('change', () => {
+            // document.querySelector('#detailPanne') !== "" ? document.querySelector('#detailPanne').style.border='none' : document.querySelector('#detailPanne').style.border='solid'
+                if (detailPanne.value !=="") {
+                    detailPanne.style.border='none';
+                } else {
+                    detailPanne.style.border='solid 1px';
+                }
+            }
+            );
 
             replicateInput(nomSociete, nomSociete2);
             replicateInput(nom, nom2);
