@@ -81,8 +81,10 @@
                                 Prise en charge express
                             </div>
                             
-                            <input type="radio" name="priseEnChargeExpress" id="priseEnChargeOui"> Oui (39€)
-                            <input type="radio" name="priseEnChargeExpress" id="priseEnChargeNon"> Non
+                            <input type="radio" name="priseEnChargeExpress" id="priseEnChargeOui">
+                            <label for="priseEnChargeOui"> Oui (39€) </label>
+                            <input type="radio" name="priseEnChargeExpress" id="priseEnChargeNon">
+                            <label for="priseEnChargeNon"> Non </label>
                         </div>
                     </div>
 
@@ -134,6 +136,10 @@
                                     <input type="checkbox" name="accessoire" id="cable">
                                     <label for="cable"> Cable </label>
                                 </div>
+                                <div>
+                                    <input type="checkbox" name="accessoire" id="carton">
+                                    <label for="carton"> Carton </label>
+                                </div>
                             </div>
                              
                             <div class="other">
@@ -157,7 +163,7 @@
                     <div class="bold"> 
                         DETAILS DE LA PANNE : 
                     </div>
-                    <textarea name="detailPanne"></textarea>
+                    <textarea name="detailPanne" id="detailPanne"></textarea>
                 </div>
 
                 <div class="nature-panne ">
@@ -174,9 +180,9 @@
                     </div>
                         
                     <div class="conditions">
-                        <input type="radio" name="naturePanne" id="conditions">
-                        <label for="conditions"> Dans des conditions particulières  :</label>
-                        <input type="text" name="" id="conditions">
+                        <input type="radio" name="naturePanne" id="conditionsCB">
+                        <label for="conditionsCB"> Dans des conditions particulières  :</label>
+                        <input type="text" name="" id="conditionsTF">
                     </div>
                 </div>
 
@@ -187,7 +193,7 @@
                     <div class="want-save">
                         <input type="radio" name="saveData" id="saveData">
                         <label for="saveData"> Désire une sauvegarde, à renseigner:  </label>
-                        <input type="text" name="wantSave" id="">
+                        <input type="text" name="wantSave" id="saveDataTF">
                     </div>
                     <div class="saveData">
                         <input type="radio" name="saveData" id="noSave">
@@ -258,8 +264,8 @@
                         <div class="prise-en-charge">
                             <div class="bold">Prise en charge express : </div>
                             <div>
-                                <input type="radio" name="priseEnChargeExpress"> Oui (39€)
-                                <input type="radio" name="priseEnChargeExpress"> Non
+                                <input type="radio" name="priseEnChargeExpress" id="priseEnChargeOui2"> Oui (39€)
+                                <input type="radio" name="priseEnChargeExpress" id="priseEnChargeNon2"> Non
                             </div>
                         </div>
                     </div>
@@ -267,14 +273,6 @@
                         <div class="materiel-concerne bold">
                             Materiel Concerné: 
                             <input type="text" name="materielConcerne" id="materielConcerne2" disabled>
-                        </div>
-                        <div class="login bold">
-                            Identifiant: 
-                            <input type="text" name="login" id="login2" disabled>
-                        </div>
-                        <div class="mdp bold">
-                            Mot de passe: 
-                            <input type="text" name="mdp" id="mdp2" disabled>
                         </div>
                         <div class="accessoires">
                             <div class="bold">
@@ -311,6 +309,11 @@
                                     <input type="checkbox" name="accessoire" id="cable2">
                                     <label for="cable"> Cable </label>
                                 </div>
+                                
+                                <div>
+                                    <input type="checkbox" name="accesoire" id="carton2">
+                                    <label for="carton2"> Carton </label>
+                                </div>
                             </div>
                              
                             <div class="other">
@@ -329,7 +332,7 @@
             </form>
             <div class="info-magasin">
                 <div>
-                    <span>Update Informatique</span> centre d'affaire du Zénith - Le Triangle 17 rue de Sarlievre 63 800 Cournon d'Auvergne
+                    <span>Update Informatique</span> Centre d'affaires du Zénith - Le Triangle 17 rue de Sarlieve 63 800 Cournon d'Auvergne
                 </div>
                 <div>
                     <span>04 73 84 30 75</span> Ouvert du Lundi au Samedi de 9h00 à 19h00 non stop !
@@ -354,8 +357,25 @@
             }
 
             const replicateCb = (cb1, cb2) => {
-                cb1.addEventListener('change', () => cb2.value = cb1.value);
+                // cb1.addEventListener('change', () => cb2.value = cb1.value);
                 cb1.addEventListener("change", () => cb1.checked ? cb2.checked = true : cb2.checked = false);
+            }
+
+            const changeVisibility = (cb, textField) =>
+            {
+                // cb.addEventListener('change', () => {cb.checked ? textField.style.visibility='visible' : textField.style.visibility='hidden'})
+                cb.addEventListener('change', () => {
+                    if (cb.checked) {
+                        textField.style.visibility='visible';
+                        console.log(cb.value);
+                    }
+                    else {
+                        textField.style.visibility='hidden';
+                        console.log(cb.value);
+                    }
+                }
+                );
+                console.log(cb.value);
             }
 
             const nomSociete = document.querySelector('#nomSociete');
@@ -368,15 +388,16 @@
             const dateAchat = document.querySelector('#dateAchat');
             const priseEnChargeOui = document.querySelector('#priseEnChargeOui');
             const priseEnChargeNon = document.querySelector('#priseEnChargeNon');
+            const conditionsCB = document.querySelector('#conditionsCB');
+            const conditionsTF = document.querySelector('#conditionsTF')
             const materielConcerne = document.querySelector('#materielConcerne');
-            const login = document.querySelector('#login');
-            const mdp = document.querySelector('#mdp');
             const alim = document.querySelector('#alim');
             const sacoche = document.querySelector('#sacoche');
             const souris = document.querySelector('#souris');
             const clavier = document.querySelector('#clavier');
             const ecran = document.querySelector('#ecran');
             const cable = document.querySelector('#cable');
+            const carton = document.querySelector('#carton');
             const autre = document.querySelector('#autre');
             const autreTF = document.querySelector('#autreTF');
 
@@ -391,16 +412,17 @@
             const priseEnChargeOui2 = document.querySelector('#priseEnChargeOui2');
             const priseEnChargeNon2 = document.querySelector('#priseEnChargeNon2');
             const materielConcerne2 = document.querySelector('#materielConcerne2');
-            const login2 = document.querySelector('#login2');
-            const mdp2 = document.querySelector('#mdp2');
             const alim2 = document.querySelector('#alim2');
             const sacoche2 = document.querySelector('#sacoche2');
             const souris2 = document.querySelector('#souris2');
             const clavier2 = document.querySelector('#clavier2');
             const ecran2 = document.querySelector('#ecran2');
             const cable2 = document.querySelector('#cable2');
+            const carton2 = document.querySelector('#carton2');
             const autre2 = document.querySelector('#autre2');
             const autreTF2 = document.querySelector('#autreTF2');
+
+            document.querySelector('#detailPanne').addEventListener('change', () => document.querySelector('#detailPanne') !== "" ? document.querySelector('#detailPanne').style.border='none' : document.querySelector('#detailPanne').style.border='solid');
 
             replicateInput(nomSociete, nomSociete2);
             replicateInput(nom, nom2);
@@ -408,10 +430,10 @@
             replicateInput(mail, mail2);
             replicateInput(phone, phone2);
             replicateInput(materielConcerne, materielConcerne2);
-            replicateInput(login, login2);
-            replicateInput(mdp, mdp2);
             replicateInput(autreTF, autreTF2);
             replicateInput(dateAchat, dateAchat2);
+            replicateInput(carton, carton2);
+            
             replicateCb(garantieOui, garantieOui2);
             replicateCb(garantieNon, garantieNon2);
             replicateCb(priseEnChargeOui, priseEnChargeOui2);
@@ -423,6 +445,27 @@
             replicateCb(ecran, ecran2);
             replicateCb(cable, cable2);
             replicateCb(autre, autre2);
+
+            autre.addEventListener('change', () => {
+                if (autre.checked === true) {
+                    autreTF.style.visibility='visible';
+                    autre2.checked = true;
+                    autreTF2.style.visibility='visible';
+                }
+                else {
+                    autreTF.style.visibility='hidden';
+                    autreTF2.style.visibility='hidden';
+                }
+            });
+
+            conditionsCB.addEventListener('change', () => {
+                if (conditionsCB.checked === true) {
+                    conditionsTF.style.visibility='visible';
+                }
+                else if (document.querySelector('#random').checked || document.querySelector('#prem').checked) {
+                    conditionsTF.style.visibility='hidden';
+                }
+            });
         </script>
     </body>
 </html>
