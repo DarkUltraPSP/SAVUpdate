@@ -51,12 +51,12 @@ input[type=text], input[type=mail], input[type=date]   {
 
 .left-side div {
     display: flex;
-    margin: 0.025cm 0 0.025cm 0;
+    margin: 0.035cm 0 0.035cm 0;
 }
 
 .right-side div {
     display: flex;
-    margin: 0.025cm 0 0.025cm 0;
+    margin: 0.035cm 0 0.035cm 0;
 }
 
 .left-side {
@@ -117,6 +117,7 @@ input[type=text], input[type=mail], input[type=date]   {
     flex-direction: column;
     padding: 0.2cm 0.7cm 0.2cm 0.7cm;
     border-bottom: dotted;
+    border-width: 1px;
 }
 
 .detail-panne {
@@ -173,6 +174,7 @@ input[type=text], input[type=mail], input[type=date]   {
     display: flex;
     flex-direction: column;
     margin: 0 0.7cm 0 0.7cm;
+
 }
 
 .accord{
@@ -189,11 +191,15 @@ input[type=text], input[type=mail], input[type=date]   {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 0.25cm;
+    margin-top: 0.5cm;
     font-size: 0.4cm;
 }
 
 .info-magasin span {
     font-weight: bold;
     color: rgb(9, 73, 146);
+}
+
+.copy-form {
+    padding-top: 0.60cm;
 }

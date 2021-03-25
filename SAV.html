@@ -7,21 +7,19 @@
     </head>
     <body>
         <div class="page-container">
-
             <div class="logo">
                 <img src="Update.png" class="logo">
             </div>
-            
             <form class="original-form">
                 <div class="bloc-renseignement">
                     <div class="left-side">
                         <div class="date">
                             <div class="bold"> Date de réception : </div>
                             <script>
-                                var today = new Date();
-                                var jj = String(today.getDate()).padStart(2, '0');
-                                var mm = String(today.getMonth() + 1).padStart(2, '0'); 
-                                var yyyy = today.getFullYear();
+                                let today = new Date();
+                                const jj = String(today.getDate()).padStart(2, '0');
+                                const mm = String(today.getMonth() + 1).padStart(2, '0'); 
+                                const yyyy = today.getFullYear();
 
                                 today = jj + '/' + mm + '/' + yyyy;
                                 document.write(today);
@@ -31,7 +29,7 @@
                             <div class="bold">
                                 Nom de la société: 
                             </div>
-                            <input type="text" name="nomSociete">
+                            <input type="text" name="nomSociete" id="nomSociete">
                         </div>
                         <div class="nom">
                             <div class="bold">
@@ -64,8 +62,10 @@
                             </div>
                             
                             <div>
-                                <input type="radio" name="garantie"> Oui
-                                <input type="radio" name="garantie"> Non
+                                <input type="radio" name="garantie" id="garantieOui">
+                                <label for="garantieOui"> Oui </label>
+                                <input type="radio" name="garantie" id="garantieNon">
+                                <label for="garantieNon"> Non </label>
                             </div>
                             
                         </div>
@@ -81,15 +81,15 @@
                                 Prise en charge express
                             </div>
                             
-                            <input type="radio" name="priseEnChargeExpress"> Oui (39€)
-                            <input type="radio" name="priseEnChargeExpress"> Non
+                            <input type="radio" name="priseEnChargeExpress" id="priseEnChargeOui"> Oui (39€)
+                            <input type="radio" name="priseEnChargeExpress" id="priseEnChargeNon"> Non
                         </div>
                     </div>
 
                     <div class="right-side">
                         <div class="materiel-concerne bold">
                             Materiel Concerné: 
-                            <input type="text" name="materielConfirme" id="materielConfirme">
+                            <input type="text" name="materielConfirme" id="materielConcerne">
                         </div>
                         <div class="login bold">
                             Identifiant: 
@@ -117,17 +117,12 @@
                                 
                                 <div>
                                     <input type="checkbox" name="accessoire" id="souris">
-                                    <label for="souris"> Souris</label>
+                                    <label for="souris"> Souris </label>
                                 </div>
                                 
                                 <div>
                                     <input type="checkbox" name="accessoire" id="clavier">
                                     <label for="clavier"> Clavier </label>
-                                </div>
-                                
-                                <div>
-                                    <input type="checkbox" name="accessoire" id="ecran">
-                                    <label for="ecran"> Ecran </label>
                                 </div>
                                 
                                 <div>
@@ -148,7 +143,7 @@
                                 </div>
                                 
                                 <div>
-                                    <input type="text" name="accessoire" id="">
+                                    <input type="text" name="accessoire" id="autreTF">
                                 </div>
                             </div>
                             
@@ -157,14 +152,18 @@
                 </div>
             </form>
 
-            <div class="bloc3 bold">
+            <div class="bloc3">
                 <div class="detail-panne">
-                    DETAILS DE LA PANNE :
+                    <div class="bold"> 
+                        DETAILS DE LA PANNE : 
+                    </div>
                     <textarea name="detailPanne"></textarea>
                 </div>
 
-                <div class="nature-panne">
-                    Nature de la panne
+                <div class="nature-panne ">
+                    <div class="bold">
+                        Nature de la panne
+                    </div>
                     <div class="perm">
                         <input type="radio" name="naturePanne" id="perm">
                         <label for="perm"> Permanente </label>
@@ -182,21 +181,25 @@
                 </div>
 
                 <div class="save-data">
-                    SAUVEGARDE DES DONNEES
+                    <div class="bold">
+                        SAUVEGARDE DES DONNÉES
+                    </div>
                     <div class="want-save">
-                        <input type="radio" name="saveData"> Désire une sauvegarde, à renseigner:  
+                        <input type="radio" name="saveData" id="saveData">
+                        <label for="saveData"> Désire une sauvegarde, à renseigner:  </label>
                         <input type="text" name="wantSave" id="">
                     </div>
                     <div class="saveData">
-                        <input type="radio" name="saveData" class="machin"> Ne souhaite pas de sauvegarde
+                        <input type="radio" name="saveData" id="noSave">
+                        <label for="noSave"> Ne souhaite pas de sauvegarde </label>
                     </div>
                     
                 </div>
-                <div class="devis-rep">
+                <div class="devis-rep bold">
                     DEVIS DE REPARATION :
                 </div>
-                <div class="tarif">
-                    Tarifs : 
+                <div class="tarif bold">
+                    TARIFS
                 </div>
                 <div class="accord-client">
                     <div class="accord">
@@ -218,43 +221,39 @@
                         <div class="date">
                             <div class="bold"> Date de réception : </div>
                             <script>
-                                var today = new Date();
-                                var jj = String(today.getDate()).padStart(2, '0');
-                                var mm = String(today.getMonth() + 1).padStart(2, '0'); 
-                                var yyyy = today.getFullYear();
-
-                                today = jj + '/' + mm + '/' + yyyy;
                                 document.write(today);
                             </script>
                         </div>
                         <div class="nom-societe">
                             <div class="bold">Nom de la société: </div>
-                            <input type="text" name="nomSociete">
+                            <input type="text" name="nomSociete2" id="nomSociete2" disabled>
                         </div>
                         <div class="nom">
                             <div class="bold">Nom : </div>
-                            <input type="text" name="nom" id="nom">
+                            <input type="text" name="nom" id="nom2" disabled>
                         </div>
                         <div class="prenom">
                             <div class="bold">Prenom : </div>
-                            <input type="text" name="prenom" id="prenom">
+                            <input type="text" name="prenom" id="prenom2" disabled>
                         </div>
                         <div class="mail">
                             <div class="bold"> E-mail : </div>
-                            <input type="mail" name="mail" id="mail">
+                            <input type="mail" name="mail" id="mail2" disabled>
                         </div>
                         <div class="phone">
                             <div class="bold">Téléphone: </div>
-                            <input type="text" name="phone" id="phone">
+                            <input type="text" name="phone" id="phone2" disabled>
                         </div>
                         <div class="garantie">
                             <div class="bold">Produit sous garantie : </div>
-                            Oui <input type="radio" name="garantie">
-                            Non <input type="radio" name="garantie">
+                            <input type="radio" name="garantie" id="garantieOui2">
+                            <label for="garantieOui2"> Oui </label>
+                            <input type="radio" name="garantie" id="garantieNon2">
+                            <label for="garantieNon2"> Non </label>
                         </div>
                         <div class="date-achat">
                             <div class="bold">Date d'achat client : </div>
-                            <input type="date" name="dateAchat" id="dateAchat">
+                            <input type="date" name="dateAchat" id="dateAchat2">
                         </div>
                         <div class="prise-en-charge">
                             <div class="bold">Prise en charge express : </div>
@@ -267,15 +266,15 @@
                     <div class="right-side">
                         <div class="materiel-concerne bold">
                             Materiel Concerné: 
-                            <input type="text" name="materielConfirme" id="materielConfirme">
+                            <input type="text" name="materielConcerne" id="materielConcerne2" disabled>
                         </div>
                         <div class="login bold">
                             Identifiant: 
-                            <input type="text" name="login" id="login">
+                            <input type="text" name="login" id="login2" disabled>
                         </div>
                         <div class="mdp bold">
                             Mot de passe: 
-                            <input type="text" name="mdp" id="mdp">
+                            <input type="text" name="mdp" id="mdp2" disabled>
                         </div>
                         <div class="accessoires">
                             <div class="bold">
@@ -284,49 +283,44 @@
                             
                             <div class="type-accesoires">
                                 <div>
-                                    <input type="checkbox" name="accessoire" id="alim">
+                                    <input type="checkbox" name="accessoire" id="alim2">
                                     <label for="alim"> Alimentation </label>
                                 </div>
                                 
                                 <div>
-                                    <input type="checkbox" name="accessoire" id="sacoche">
+                                    <input type="checkbox" name="accessoire" id="sacoche2">
                                     <label for="sacoche"> Sacoche </label>
                                 </div>
                                 
                                 <div>
-                                    <input type="checkbox" name="accessoire" id="souris">
-                                    <label for="souris"> Souris</label>
+                                    <input type="checkbox" name="accessoire" id="souris2">
+                                    <label for="souris2"> Souris</label>
                                 </div>
                                 
                                 <div>
-                                    <input type="checkbox" name="accessoire" id="clavier">
+                                    <input type="checkbox" name="accessoire" id="clavier2">
                                     <label for="clavier"> Clavier </label>
                                 </div>
                                 
                                 <div>
-                                    <input type="checkbox" name="accessoire" id="ecran">
+                                    <input type="checkbox" name="accessoire" id="ecran2">
                                     <label for="ecran"> Ecran </label>
                                 </div>
                                 
                                 <div>
-                                    <input type="checkbox" name="accessoire" id="ecran">
-                                    <label for="ecran"> Ecran </label>
-                                </div>
-                                
-                                <div>
-                                    <input type="checkbox" name="accessoire" id="cable">
+                                    <input type="checkbox" name="accessoire" id="cable2">
                                     <label for="cable"> Cable </label>
                                 </div>
                             </div>
                              
                             <div class="other">
                                 <div>
-                                    <input type="checkbox" name="accessoire" id="autre">
+                                    <input type="checkbox" name="accessoire" id="autre2">
                                     <label for="autre"> Autres : </label>
                                 </div>
                                 
                                 <div>
-                                    <input type="text" name="accessoire" id="">
+                                    <input type="text" name="accessoire" id="autreTF2" disabled>
                                 </div>
                             </div>
                         </div>
@@ -341,7 +335,95 @@
                     <span>04 73 84 30 75</span> Ouvert du Lundi au Samedi de 9h00 à 19h00 non stop !
                 </div>
             </div>
-            
         </div>
+        <script>
+            const replicateInput = (field1, field2) => {
+                field1.addEventListener('change', () => {
+                    field2.value = field1.value;
+                    if (field1.value != "") {
+                        field1.style.border = 'none';
+                        field2.style.border = 'none';
+                    } 
+                    else {
+                        field1.style.borderBottom='dotted';
+                        field1.style.borderWidth='1px';
+                        field2.style.borderBottom='dotted';
+                        field2.style.borderWidth='1px';
+                    }
+                });
+            }
+
+            const replicateCb = (cb1, cb2) => {
+                cb1.addEventListener('change', () => cb2.value = cb1.value);
+                cb1.addEventListener("change", () => cb1.checked ? cb2.checked = true : cb2.checked = false);
+            }
+
+            const nomSociete = document.querySelector('#nomSociete');
+            const nom = document.querySelector('#nom');
+            const prenom = document.querySelector('#prenom');
+            const mail = document.querySelector('#mail');
+            const phone = document.querySelector('#phone');
+            const garantieOui = document.querySelector('#garantieOui');
+            const garantieNon = document.querySelector('#garantieNon');
+            const dateAchat = document.querySelector('#dateAchat');
+            const priseEnChargeOui = document.querySelector('#priseEnChargeOui');
+            const priseEnChargeNon = document.querySelector('#priseEnChargeNon');
+            const materielConcerne = document.querySelector('#materielConcerne');
+            const login = document.querySelector('#login');
+            const mdp = document.querySelector('#mdp');
+            const alim = document.querySelector('#alim');
+            const sacoche = document.querySelector('#sacoche');
+            const souris = document.querySelector('#souris');
+            const clavier = document.querySelector('#clavier');
+            const ecran = document.querySelector('#ecran');
+            const cable = document.querySelector('#cable');
+            const autre = document.querySelector('#autre');
+            const autreTF = document.querySelector('#autreTF');
+
+            const nomSociete2 = document.querySelector('#nomSociete2');
+            const nom2 = document.querySelector('#nom2');
+            const prenom2 = document.querySelector('#prenom2');
+            const mail2 = document.querySelector('#mail2');
+            const phone2 = document.querySelector('#phone2');
+            const garantieOui2 = document.querySelector('#garantieOui2');
+            const garantieNon2 = document.querySelector('#garantieNon2');
+            const dateAchat2 = document.querySelector('#dateAchat2');
+            const priseEnChargeOui2 = document.querySelector('#priseEnChargeOui2');
+            const priseEnChargeNon2 = document.querySelector('#priseEnChargeNon2');
+            const materielConcerne2 = document.querySelector('#materielConcerne2');
+            const login2 = document.querySelector('#login2');
+            const mdp2 = document.querySelector('#mdp2');
+            const alim2 = document.querySelector('#alim2');
+            const sacoche2 = document.querySelector('#sacoche2');
+            const souris2 = document.querySelector('#souris2');
+            const clavier2 = document.querySelector('#clavier2');
+            const ecran2 = document.querySelector('#ecran2');
+            const cable2 = document.querySelector('#cable2');
+            const autre2 = document.querySelector('#autre2');
+            const autreTF2 = document.querySelector('#autreTF2');
+
+            replicateInput(nomSociete, nomSociete2);
+            replicateInput(nom, nom2);
+            replicateInput(prenom, prenom2);
+            replicateInput(mail, mail2);
+            replicateInput(phone, phone2);
+            replicateInput(materielConcerne, materielConcerne2);
+            replicateInput(login, login2);
+            replicateInput(mdp, mdp2);
+            replicateInput(autreTF, autreTF2);
+            replicateInput(dateAchat, dateAchat2);
+            replicateCb(garantieOui, garantieOui2);
+            replicateCb(garantieNon, garantieNon2);
+            replicateCb(priseEnChargeOui, priseEnChargeOui2);
+            replicateCb(priseEnChargeNon, priseEnChargeNon2);
+            replicateCb(alim, alim2);
+            replicateCb(sacoche, sacoche2);
+            replicateCb(souris, souris2);
+            replicateCb(clavier, clavier2);
+            replicateCb(ecran, ecran2);
+            replicateCb(cable, cable2);
+            replicateCb(autre, autre2);
+        </script>
     </body>
 </html>
+
